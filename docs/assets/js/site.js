@@ -205,7 +205,6 @@
       count.textContent = (index + 1) + " of " + shots.length;
       prev.disabled = index === 0;
       next.disabled = index === shots.length - 1;
-      dialog.style.maxWidth = "min(96vw, " + (Number(shot.dataset.w) + 32) + "px)";
     }
 
     shots.forEach(function (shot, shotIndex) {
@@ -217,13 +216,16 @@
       });
     });
 
-    prev.addEventListener("click", function () {
+    prev.addEventListener("click", function (event) {
+      event.stopPropagation();
       if (index > 0) show(index - 1);
     });
-    next.addEventListener("click", function () {
+    next.addEventListener("click", function (event) {
+      event.stopPropagation();
       if (index < shots.length - 1) show(index + 1);
     });
-    closeBtn.addEventListener("click", function () {
+    closeBtn.addEventListener("click", function (event) {
+      event.stopPropagation();
       dialog.close();
     });
 
@@ -243,11 +245,16 @@
       }
     });
 
+    // Close on a backdrop click. The press must start on the backdrop too:
+    // Next changes the dialog width, and the browser can then deliver the
+    // click to the backdrop.
+    var downOnBackdrop = false;
+    dialog.addEventListener("pointerdown", function (event) {
+      downOnBackdrop = event.target === dialog;
+    });
     dialog.addEventListener("click", function (event) {
-      var rect = dialog.getBoundingClientRect();
-      var inside = event.clientX >= rect.left && event.clientX <= rect.right &&
-        event.clientY >= rect.top && event.clientY <= rect.bottom;
-      if (!inside) dialog.close();
+      if (downOnBackdrop && event.target === dialog) dialog.close();
+      downOnBackdrop = false;
     });
 
     var startX = 0;
