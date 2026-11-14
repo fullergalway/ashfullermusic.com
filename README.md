@@ -72,6 +72,7 @@ The local preview server does not use `docs/404.html` for a missing path. GitHub
    - `185.199.110.153`
    - `185.199.111.153`
 4. Set a CNAME record for `www` to the GitHub Pages hostname. GitHub shows that name under Settings, then Pages. It looks like `yourname.github.io`.
-5. When the certificate is ready, turn on Enforce HTTPS.
+5. Add a file `docs/CNAME` with one line, `ashfullermusic.com`, and push it. You can also type that domain under Settings, then Pages. GitHub writes the same file.
+6. When the certificate is ready, turn on Enforce HTTPS.
 
-`docs/CNAME` already contains `ashfullermusic.com`.
+Leave `docs/CNAME` out until the domain records are in place. With that file present, GitHub sends the `github.io` address to `ashfullermusic.com`.
