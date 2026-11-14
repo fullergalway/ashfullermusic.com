@@ -87,7 +87,7 @@
   function loadShows() {
     var upcomingEl = document.querySelector("#live-upcoming");
     var pastEl = document.querySelector("#live-past");
-    fetch("/data/shows.json")
+    fetch("data/shows.json")
       .then(function (response) {
         if (!response.ok) return null;
         return response.json();
@@ -128,7 +128,7 @@
     var section = document.querySelector("#merch");
     var link = document.querySelector("#merch-link");
     var list = document.querySelector(".merch-list");
-    fetch("/data/merch.json")
+    fetch("data/merch.json")
       .then(function (response) {
         if (!response.ok) return null;
         return response.json();

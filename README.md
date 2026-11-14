@@ -34,7 +34,7 @@ Edit `docs/data/merch.json`. The file ships as `[]`, and the Merch section stays
 | Field | What to put |
 | --- | --- |
 | `name` | Item name |
-| `image` | Path from the site root, such as `/assets/img/shirt-960.webp` |
+| `image` | Path from the page, such as `assets/img/shirt-960.webp` |
 | `price` | Text, such as `€20` |
 | `url` | An `https://` link |
 
