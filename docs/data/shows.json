@@ -1,0 +1,18 @@
+[
+  {
+    "date": "2026-11-05",
+    "venue": "Róisín Dubh",
+    "city": "Galway",
+    "note": "First headline show",
+    "ticketUrl": "https://roisindubh.net/listings/ash-fuller-2026-11-05-200000-81518",
+    "soldOut": true
+  },
+  {
+    "date": "2026-09-28",
+    "venue": "Róisín Dubh",
+    "city": "Galway",
+    "note": "126 Gallery Interns fundraiser",
+    "ticketUrl": "",
+    "soldOut": false
+  }
+]
